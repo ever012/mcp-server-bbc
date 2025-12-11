@@ -21,6 +21,7 @@ export class BlacklistController {
         return c.json({ error: "intent must be 'add' or 'remove'" }, 400);
       }
 
+      
       await this.manageBlacklistUseCase.execute(dto);
       return c.json({ status: "ok", number: dto.number, intent: dto.intent }, 200);
     } catch (error) {
