@@ -10,9 +10,10 @@ export class BuilderBotFlowRepository implements IFlowRepository {
       throw new Error("BuilderBot bot instance is not initialized");
     }
 
+    const { from, ...restData } = data;
     await instance.bot.dispatch(event, {
-      from: data.from.toString(),
-      ...data,
+      from: from.toString(),
+      ...restData,
     });
   }
 }

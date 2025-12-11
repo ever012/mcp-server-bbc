@@ -1,11 +1,10 @@
 import { createBot, MemoryDB, createProvider } from "@builderbot/bot";
 import { BaileysProvider } from "@builderbot/provider-baileys";
-import type { BotProvider } from "@builderbot/bot";
-// Bot type is inferred from handleCtx
+// Bot and Provider types are inferred from BuilderBot API
 
 export interface BuilderBotInstance {
   bot: any;
-  provider: BotProvider;
+  provider: any; // BuilderBot provider type (not exported from package)
   setBot(bot: any): void;
   handleCtx: any;
   httpServer: any;
@@ -13,7 +12,7 @@ export interface BuilderBotInstance {
 
 let builderBotInstance: BuilderBotInstance | null = null;
 
-export async function getBuilderBotInstance(flows: any[] = []): Promise<BuilderBotInstance> {
+export async function getBuilderBotInstance(flows: any = []): Promise<BuilderBotInstance> {
   if (builderBotInstance && builderBotInstance.bot) {
     return builderBotInstance;
   }
@@ -23,7 +22,7 @@ export async function getBuilderBotInstance(flows: any[] = []): Promise<BuilderB
   const { handleCtx, httpServer } = await createBot({
     database: new MemoryDB(),
     provider,
-    flow: flows,
+    flow: flows as any,
   });
 
   // Capturamos el bot desde handleCtx cuando se use
