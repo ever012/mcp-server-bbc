@@ -1,0 +1,10 @@
+[2025-12-11T20:34:58.527Z] Connection update: connecting
+[2025-12-11T20:35:02.894Z] Connection update: close
+[2025-12-11T20:35:02.894Z] Connection closed. Status: 405, Reason: Connection Failure
+[2025-12-11T20:35:02.895Z] Critical error, stopping reconnection attempts
+[2025-12-11T20:35:29.517Z] Iniciando limpieza de recursos...
+[2025-12-11T20:35:49.607Z] Connection update: connecting
+[2025-12-11T20:35:52.090Z] Connection update: close
+[2025-12-11T20:35:52.090Z] Connection closed. Status: 405, Reason: Connection Failure
+[2025-12-11T20:35:52.090Z] Critical error, stopping reconnection attempts
+[2025-12-11T20:44:10.252Z] Iniciando limpieza de recursos...
