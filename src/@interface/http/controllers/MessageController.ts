@@ -1,6 +1,6 @@
 import { Context } from "hono";
-import { SendMessageUseCase } from "../../../@application/use-cases/SendMessage/SendMessageUseCase";
-import { SendMessageDTO } from "../../../@application/use-cases/SendMessage/SendMessageDTO";
+import { SendMessageUseCase } from "../../../@application/use-cases/SendMessage/SendMessageUseCase.js";
+import { SendMessageDTO } from "../../../@application/use-cases/SendMessage/SendMessageDTO.js";
 
 export class MessageController {
   constructor(private readonly sendMessageUseCase: SendMessageUseCase) {}

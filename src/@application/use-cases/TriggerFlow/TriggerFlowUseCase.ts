@@ -1,6 +1,6 @@
-import { IFlowRepository } from "../../../@domain/repositories/IFlowRepository";
-import { PhoneNumber } from "../../../@domain/value-objects/PhoneNumber";
-import { TriggerFlowDTO } from "./TriggerFlowDTO";
+import { IFlowRepository } from "../../../@domain/repositories/IFlowRepository.js";
+import { PhoneNumber } from "../../../@domain/value-objects/PhoneNumber.js";
+import { TriggerFlowDTO } from "./TriggerFlowDTO.js";
 
 export class TriggerFlowUseCase {
   constructor(private readonly flowRepository: IFlowRepository) {}

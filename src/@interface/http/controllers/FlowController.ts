@@ -1,6 +1,6 @@
 import { Context } from "hono";
-import { TriggerFlowUseCase } from "../../../@application/use-cases/TriggerFlow/TriggerFlowUseCase";
-import { TriggerFlowDTO } from "../../../@application/use-cases/TriggerFlow/TriggerFlowDTO";
+import { TriggerFlowUseCase } from "../../../@application/use-cases/TriggerFlow/TriggerFlowUseCase.js";
+import { TriggerFlowDTO } from "../../../@application/use-cases/TriggerFlow/TriggerFlowDTO.js";
 
 export class FlowController {
   constructor(private readonly triggerFlowUseCase: TriggerFlowUseCase) {}

@@ -1,4 +1,4 @@
-import { PhoneNumber } from "../value-objects/PhoneNumber";
+import { PhoneNumber } from "../value-objects/PhoneNumber.js";
 
 export class Message {
   constructor(

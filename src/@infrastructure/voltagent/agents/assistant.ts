@@ -1,6 +1,6 @@
 import { Agent } from "@voltagent/core";
 import { openai } from "@ai-sdk/openai";
-import { currentTimeTool } from "../tools/current-time";
+import { currentTimeTool } from "../tools/current-time.js";
 
 export const assistant = new Agent({
   name: "AssistantAgent",

@@ -1,6 +1,6 @@
 import { Context } from "hono";
-import { ManageBlacklistUseCase } from "../../../@application/use-cases/ManageBlacklist/ManageBlacklistUseCase";
-import { ManageBlacklistDTO } from "../../../@application/use-cases/ManageBlacklist/ManageBlacklistDTO";
+import { ManageBlacklistUseCase } from "../../../@application/use-cases/ManageBlacklist/ManageBlacklistUseCase.js";
+import { ManageBlacklistDTO } from "../../../@application/use-cases/ManageBlacklist/ManageBlacklistDTO.js";
 
 export class BlacklistController {
   constructor(private readonly manageBlacklistUseCase: ManageBlacklistUseCase) {}

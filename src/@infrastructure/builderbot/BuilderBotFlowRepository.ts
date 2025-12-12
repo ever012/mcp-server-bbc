@@ -1,6 +1,6 @@
-import { IFlowRepository } from "../../@domain/repositories/IFlowRepository";
-import { PhoneNumber } from "../../@domain/value-objects/PhoneNumber";
-import { getBuilderBotInstance } from "./builderbot-provider";
+import { IFlowRepository } from "../../@domain/repositories/IFlowRepository.js";
+import { PhoneNumber } from "../../@domain/value-objects/PhoneNumber.js";
+import { getBuilderBotInstance } from "./builderbot-provider.js";
 
 export class BuilderBotFlowRepository implements IFlowRepository {
   async trigger(event: string, data: { from: PhoneNumber; [key: string]: unknown }): Promise<void> {

@@ -1,6 +1,6 @@
-import { IBlacklistRepository } from "../../../@domain/repositories/IBlacklistRepository";
-import { PhoneNumber } from "../../../@domain/value-objects/PhoneNumber";
-import { ManageBlacklistDTO } from "./ManageBlacklistDTO";
+import { IBlacklistRepository } from "../../../@domain/repositories/IBlacklistRepository.js";
+import { PhoneNumber } from "../../../@domain/value-objects/PhoneNumber.js";
+import { ManageBlacklistDTO } from "./ManageBlacklistDTO.js";
 
 export class ManageBlacklistUseCase {
   constructor(private readonly blacklistRepository: IBlacklistRepository) {}

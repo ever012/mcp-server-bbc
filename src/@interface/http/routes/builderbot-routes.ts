@@ -1,7 +1,7 @@
 import { Hono } from "hono";
-import { MessageController } from "../controllers/MessageController";
-import { BlacklistController } from "../controllers/BlacklistController";
-import { FlowController } from "../controllers/FlowController";
+import { MessageController } from "../controllers/MessageController.js";
+import { BlacklistController } from "../controllers/BlacklistController.js";
+import { FlowController } from "../controllers/FlowController.js";
 
 export function createBuilderBotRoutes(
   messageController: MessageController,

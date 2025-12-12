@@ -1,15 +1,16 @@
 import { VoltAgent } from "@voltagent/core";
 import { honoServer } from "@voltagent/server-hono";
-import { logger } from "../@infrastructure/voltagent/logger";
-import { assistant } from "../@infrastructure/voltagent/agents/assistant";
-import { createMcpServer } from "../@infrastructure/voltagent/mcp-server";
-import { getBuilderBotInstance } from "../@infrastructure/builderbot/builderbot-provider";
-import { BuilderBotMessageRepository } from "../@infrastructure/builderbot/BuilderBotMessageRepository";
-import { BuilderBotBlacklistRepository } from "../@infrastructure/builderbot/BuilderBotBlacklistRepository";
-import { BuilderBotFlowRepository } from "../@infrastructure/builderbot/BuilderBotFlowRepository";
-import { SendMessageUseCase } from "../@application/use-cases/SendMessage/SendMessageUseCase";
-import { ManageBlacklistUseCase } from "../@application/use-cases/ManageBlacklist/ManageBlacklistUseCase";
-import { TriggerFlowUseCase } from "../@application/use-cases/TriggerFlow/TriggerFlowUseCase";
+import { logger } from "../@infrastructure/voltagent/logger.js";
+import { assistant } from "../@infrastructure/voltagent/agents/assistant.js";
+import { createMcpServer } from "../@infrastructure/voltagent/mcp-server.js";
+import { getBuilderBotInstance } from "../@infrastructure/builderbot/builderbot-provider.js";
+import { BuilderBotMessageRepository } from "../@infrastructure/builderbot/BuilderBotMessageRepository.js";
+import { BuilderBotBlacklistRepository } from "../@infrastructure/builderbot/BuilderBotBlacklistRepository.js";
+import { BuilderBotFlowRepository } from "../@infrastructure/builderbot/BuilderBotFlowRepository.js";
+import { SendMessageUseCase } from "../@application/use-cases/SendMessage/SendMessageUseCase.js";
+import { ManageBlacklistUseCase } from "../@application/use-cases/ManageBlacklist/ManageBlacklistUseCase.js";
+import { TriggerFlowUseCase } from "../@application/use-cases/TriggerFlow/TriggerFlowUseCase.js";
+
 // Bot type is inferred from handleCtx callback
 
 async function main() {

@@ -1,13 +1,14 @@
-import { getBuilderBotInstance } from "./builderbot-provider";
-import { BuilderBotMessageRepository } from "./BuilderBotMessageRepository";
-import { BuilderBotBlacklistRepository } from "./BuilderBotBlacklistRepository";
-import { BuilderBotFlowRepository } from "./BuilderBotFlowRepository";
-import { SendMessageUseCase } from "../../@application/use-cases/SendMessage/SendMessageUseCase";
-import { ManageBlacklistUseCase } from "../../@application/use-cases/ManageBlacklist/ManageBlacklistUseCase";
-import { TriggerFlowUseCase } from "../../@application/use-cases/TriggerFlow/TriggerFlowUseCase";
-import { MessageController } from "../../@interface/http/controllers/MessageController";
-import { BlacklistController } from "../../@interface/http/controllers/BlacklistController";
-import { FlowController } from "../../@interface/http/controllers/FlowController";
+import { getBuilderBotInstance } from "./builderbot-provider.js";
+import { BuilderBotMessageRepository } from "./BuilderBotMessageRepository.js";
+import { BuilderBotBlacklistRepository } from "./BuilderBotBlacklistRepository.js";
+import { BuilderBotFlowRepository } from "./BuilderBotFlowRepository.js";
+import { SendMessageUseCase } from "../../@application/use-cases/SendMessage/SendMessageUseCase.js";
+import { ManageBlacklistUseCase } from "../../@application/use-cases/ManageBlacklist/ManageBlacklistUseCase.js";
+import { TriggerFlowUseCase } from "../../@application/use-cases/TriggerFlow/TriggerFlowUseCase.js";
+import { MessageController } from "../../@interface/http/controllers/MessageController.js";
+import { BlacklistController } from "../../@interface/http/controllers/BlacklistController.js";
+import { FlowController } from "../../@interface/http/controllers/FlowController.js";
+
 
 export interface BuilderBotServices {
   messageController: MessageController;

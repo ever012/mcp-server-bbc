@@ -1,5 +1,5 @@
-import { BlacklistEntry, BlacklistStatus } from "../entities/BlacklistEntry";
-import { PhoneNumber } from "../value-objects/PhoneNumber";
+import { BlacklistEntry, BlacklistStatus } from "../entities/BlacklistEntry.js";
+import { PhoneNumber } from "../value-objects/PhoneNumber.js";
 
 export interface IBlacklistRepository {
   add(number: PhoneNumber): Promise<void>;

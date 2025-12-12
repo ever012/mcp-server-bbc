@@ -59,4 +59,4 @@ EXPOSE 3141
 ENTRYPOINT ["dumb-init", "--"]
 
 # Start the application (dotenv/config is already imported in the code)
-CMD ["node", "dist/index.js"]
+CMD ["node", "dist/@interface/index.js"]

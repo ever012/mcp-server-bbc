@@ -1,6 +1,6 @@
-import { Message } from "../../@domain/entities/Message";
-import { IMessageRepository } from "../../@domain/repositories/IMessageRepository";
-import { getBuilderBotInstance } from "./builderbot-provider";
+import { Message } from "../../@domain/entities/Message.js";
+import { IMessageRepository } from "../../@domain/repositories/IMessageRepository.js";
+import { getBuilderBotInstance } from "./builderbot-provider.js";
 
 export class BuilderBotMessageRepository implements IMessageRepository {
   async send(message: Message): Promise<void> {

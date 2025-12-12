@@ -1,7 +1,7 @@
-import { BlacklistStatus } from "../../@domain/entities/BlacklistEntry";
-import { IBlacklistRepository } from "../../@domain/repositories/IBlacklistRepository";
-import { PhoneNumber } from "../../@domain/value-objects/PhoneNumber";
-import { getBuilderBotInstance } from "./builderbot-provider";
+import { BlacklistStatus } from "../../@domain/entities/BlacklistEntry.js";
+import { IBlacklistRepository } from "../../@domain/repositories/IBlacklistRepository.js";
+import { PhoneNumber } from "../../@domain/value-objects/PhoneNumber.js";
+import { getBuilderBotInstance } from "./builderbot-provider.js";
 
 export class BuilderBotBlacklistRepository implements IBlacklistRepository {
   async add(number: PhoneNumber): Promise<void> {
