@@ -1,62 +1,98 @@
 # Build stage
 FROM node:22-alpine AS builder
 
-# Set working directory
 WORKDIR /app
 
 # Copy package files
 COPY package*.json ./
-COPY yarn.lock* ./
 COPY pnpm-lock.yaml* ./
 
-# Install dependencies based on lock file
-RUN if [ -f yarn.lock ]; then yarn install --frozen-lockfile; \
-    elif [ -f pnpm-lock.yaml ]; then npm install -g pnpm && pnpm install --frozen-lockfile; \
-    else npm ci; fi
+# Install pnpm
+RUN npm install -g pnpm
 
-# Copy source code
+# Install ALL dependencies (including devDependencies for build)
+RUN pnpm install --frozen-lockfile --no-optional
+
+# Copy source code and tsconfig
 COPY . .
 
-# Build the application using TypeScript
-RUN npm run build
+# Build the application
+RUN pnpm run build
 
 # Production stage
 FROM node:22-alpine
 
-# Install dumb-init for proper signal handling
-RUN apk add --no-cache dumb-init
+# Install system dependencies for builderbot/baileys and sharp
+RUN apk add --no-cache \
+    dumb-init \
+    vips-dev \
+    vips-tools \
+    ffmpeg \
+    chromium \
+    nss \
+    freetype \
+    harfbuzz \
+    ca-certificates \
+    ttf-freefont \
+    python3 \
+    make \
+    g++
 
 # Create non-root user
-RUN addgroup -g 1001 -S nodejs
-RUN adduser -S nodejs -u 1001
+RUN addgroup -g 1001 -S nodejs && \
+    adduser -S nodejs -u 1001
 
-# Set working directory
+# Set environment variables
+ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true \
+    PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium-browser \
+    FFMPEG_PATH=/usr/bin/ffmpeg \
+    NODE_OPTIONS="--no-warnings"
+
 WORKDIR /app
 
 # Copy package files
 COPY package*.json ./
-COPY yarn.lock* ./
 COPY pnpm-lock.yaml* ./
 
-# Install production dependencies only
-RUN if [ -f yarn.lock ]; then yarn install --frozen-lockfile --production; \
-    elif [ -f pnpm-lock.yaml ]; then npm install -g pnpm && pnpm install --frozen-lockfile --prod; \
-    else npm ci --omit=dev; fi
+# Install pnpm
+RUN npm install -g pnpm
 
-# Copy built application from builder stage
+# Install production dependencies
+# Using --no-optional to avoid platform-specific binaries issues
+RUN pnpm install --frozen-lockfile --prod
+
+# Rebuild sharp for Alpine Linux (musl libc)
+RUN npm rebuild sharp
+
+# Copy built application from builder
 COPY --from=builder --chown=nodejs:nodejs /app/dist ./dist
 
-# Copy .env file if it exists (dotenv will read it automatically)
-COPY --chown=nodejs:nodejs .env* ./
+# Create ffmpeg-installer compatibility structure
+# This fixes the "Cannot find module" error for @ffmpeg-installer
+RUN FFMPEG_PATH=$(find /app/node_modules/.pnpm -type d -name "@ffmpeg-installer+ffmpeg@*" 2>/dev/null | head -n 1) && \
+    if [ -n "$FFMPEG_PATH" ]; then \
+        mkdir -p "$FFMPEG_PATH/node_modules/@ffmpeg-installer/linux-x64" && \
+        ln -sf /usr/bin/ffmpeg "$FFMPEG_PATH/node_modules/@ffmpeg-installer/linux-x64/ffmpeg" && \
+        echo '{"name":"@ffmpeg-installer/linux-x64","version":"4.1.0","os":["linux"],"cpu":["x64"],"main":"index.js"}' > "$FFMPEG_PATH/node_modules/@ffmpeg-installer/linux-x64/package.json" && \
+        echo 'module.exports = { path: "/usr/bin/ffmpeg", version: "4.1.0", url: "system" };' > "$FFMPEG_PATH/node_modules/@ffmpeg-installer/linux-x64/index.js"; \
+    fi
+
+# Create necessary directories for builderbot/baileys
+RUN mkdir -p /app/.wwebjs_auth /app/.wwebjs_cache && \
+    chown -R nodejs:nodejs /app
 
 # Switch to non-root user
 USER nodejs
 
-# Expose port (VoltAgent default)
-EXPOSE 3141
+# Expose ports
+EXPOSE 3141 3001
 
-# Use dumb-init to handle signals properly
+# Health check to verify the service is running
+HEALTHCHECK --interval=30s --timeout=10s --start-period=40s --retries=3 \
+  CMD node -e "require('http').get('http://localhost:3141', (r) => process.exit(r.statusCode === 200 ? 0 : 1)).on('error', () => process.exit(1))"
+
+# Use dumb-init for proper signal handling
 ENTRYPOINT ["dumb-init", "--"]
 
-# Start the application (dotenv/config is already imported in the code)
+# Start the application
 CMD ["node", "dist/@interface/index.js"]

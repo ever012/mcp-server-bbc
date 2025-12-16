@@ -8,3 +8,99 @@
 [2025-12-11T20:35:52.090Z] Connection closed. Status: 405, Reason: Connection Failure
 [2025-12-11T20:35:52.090Z] Critical error, stopping reconnection attempts
 [2025-12-11T20:44:10.252Z] Iniciando limpieza de recursos...
+[2025-12-12T15:00:32.789Z] Connection update: connecting
+[2025-12-12T15:00:34.996Z] Connection update: close
+[2025-12-12T15:00:34.996Z] Connection closed. Status: 405, Reason: Connection Failure
+[2025-12-12T15:00:34.996Z] Critical error, stopping reconnection attempts
+[2025-12-12T15:11:28.190Z] Connection update: connecting
+[2025-12-12T15:11:30.044Z] Connection update: close
+[2025-12-12T15:11:30.044Z] Connection closed. Status: 405, Reason: Connection Failure
+[2025-12-12T15:11:30.044Z] Critical error, stopping reconnection attempts
+[2025-12-12T15:13:46.178Z] Connection update: connecting
+[2025-12-12T15:13:48.341Z] Connection update: close
+[2025-12-12T15:13:48.341Z] Connection closed. Status: 405, Reason: Connection Failure
+[2025-12-12T15:13:48.341Z] Critical error, stopping reconnection attempts
+[2025-12-12T15:13:52.542Z] Connection update: connecting
+[2025-12-12T15:13:56.002Z] Connection update: close
+[2025-12-12T15:13:56.002Z] Connection closed. Status: 405, Reason: Connection Failure
+[2025-12-12T15:13:56.003Z] Critical error, stopping reconnection attempts
+[2025-12-12T15:14:16.487Z] Connection update: connecting
+[2025-12-12T15:14:21.827Z] Connection update: close
+[2025-12-12T15:14:21.827Z] Connection closed. Status: 405, Reason: Connection Failure
+[2025-12-12T15:14:21.827Z] Critical error, stopping reconnection attempts
+[2025-12-12T15:15:00.037Z] Connection update: connecting
+[2025-12-12T15:15:03.193Z] Connection update: close
+[2025-12-12T15:15:03.193Z] Connection closed. Status: 405, Reason: Connection Failure
+[2025-12-12T15:15:03.194Z] Critical error, stopping reconnection attempts
+[2025-12-12T15:15:10.898Z] Connection update: connecting
+[2025-12-12T15:15:11.250Z] Connection update: close
+[2025-12-12T15:15:11.250Z] Connection closed. Status: 405, Reason: Connection Failure
+[2025-12-12T15:15:11.250Z] Critical error, stopping reconnection attempts
+[2025-12-12T15:16:52.830Z] Connection update: connecting
+[2025-12-12T15:25:48.779Z] Connection update: connecting
+[2025-12-12T15:25:50.502Z] Connection update: close
+[2025-12-12T15:25:50.502Z] Connection closed. Status: 405, Reason: Connection Failure
+[2025-12-12T15:25:50.502Z] Critical error, stopping reconnection attempts
+[2025-12-12T15:25:55.514Z] Connection update: connecting
+[2025-12-12T15:25:55.612Z] Iniciando limpieza de recursos...
+[2025-12-12T15:26:34.122Z] Connection update: connecting
+[2025-12-12T15:26:36.296Z] Connection update: close
+[2025-12-12T15:26:36.296Z] Connection closed. Status: 405, Reason: Connection Failure
+[2025-12-12T15:26:36.296Z] Critical error, stopping reconnection attempts
+[2025-12-12T15:26:45.267Z] Iniciando limpieza de recursos...
+[2025-12-12T15:28:16.460Z] Connection update: connecting
+[2025-12-12T15:28:17.602Z] Connection update: close
+[2025-12-12T15:28:17.602Z] Connection closed. Status: 405, Reason: Connection Failure
+[2025-12-12T15:28:17.602Z] Critical error, stopping reconnection attempts
+[2025-12-12T15:30:00.530Z] Connection update: connecting
+[2025-12-12T15:30:03.647Z] Connection update: connecting
+[2025-12-12T15:30:03.906Z] Connection update: close
+[2025-12-12T15:30:03.906Z] Connection closed. Status: 408, Reason: WebSocket Error ()
+[2025-12-12T15:30:03.906Z] Reconnection attempt 1/10 in 1000ms
+[2025-12-12T15:30:09.156Z] Connection update: connecting
+[2025-12-12T15:30:10.725Z] Connection update: close
+[2025-12-12T15:30:10.725Z] Connection closed. Status: 405, Reason: Connection Failure
+[2025-12-12T15:30:10.725Z] Critical error, stopping reconnection attempts
+[2025-12-12T15:30:11.579Z] Iniciando limpieza de recursos...
+[2025-12-12T15:31:25.666Z] Connection update: connecting
+[2025-12-12T15:31:26.297Z] Connection update: close
+[2025-12-12T15:31:26.297Z] Connection closed. Status: 405, Reason: Connection Failure
+[2025-12-12T15:31:26.297Z] Critical error, stopping reconnection attempts
+[2025-12-12T15:32:32.389Z] Iniciando limpieza de recursos...
+[2025-12-12T19:17:30.179Z] Connection update: connecting
+[2025-12-12T19:17:34.444Z] Connection update: close
+[2025-12-12T19:17:34.444Z] Connection closed. Status: 405, Reason: Connection Failure
+[2025-12-12T19:17:34.444Z] Critical error, stopping reconnection attempts
+[2025-12-12T19:21:02.428Z] Iniciando limpieza de recursos...
+[2025-12-12T19:51:05.489Z] Connection update: connecting
+[2025-12-12T19:51:10.631Z] Connection update: close
+[2025-12-12T19:51:10.631Z] Connection closed. Status: 405, Reason: Connection Failure
+[2025-12-12T19:51:10.631Z] Critical error, stopping reconnection attempts
+[2025-12-12T19:54:15.604Z] Iniciando limpieza de recursos...
+[2025-12-12T20:07:36.075Z] Connection update: connecting
+[2025-12-12T20:07:39.670Z] Connection update: close
+[2025-12-12T20:07:39.670Z] Connection closed. Status: 405, Reason: Connection Failure
+[2025-12-12T20:07:39.671Z] Critical error, stopping reconnection attempts
+[2025-12-12T20:17:33.496Z] Connection update: connecting
+[2025-12-12T20:17:34.497Z] Connection update: close
+[2025-12-12T20:17:34.498Z] Connection closed. Status: 405, Reason: Connection Failure
+[2025-12-12T20:17:34.498Z] Critical error, stopping reconnection attempts
+[2025-12-12T20:17:44.842Z] Connection update: connecting
+[2025-12-12T20:17:46.359Z] Connection update: close
+[2025-12-12T20:17:46.359Z] Connection closed. Status: 405, Reason: Connection Failure
+[2025-12-12T20:17:46.359Z] Critical error, stopping reconnection attempts
+[2025-12-12T20:18:44.609Z] Iniciando limpieza de recursos...
+[2025-12-12T20:46:34.265Z] Connection update: connecting
+[2025-12-12T20:46:38.062Z] Connection update: close
+[2025-12-12T20:46:38.062Z] Connection closed. Status: 405, Reason: Connection Failure
+[2025-12-12T20:46:38.062Z] Critical error, stopping reconnection attempts
+[2025-12-12T21:58:46.880Z] Connection update: connecting
+[2025-12-12T21:58:49.330Z] Connection update: close
+[2025-12-12T21:58:49.330Z] Connection closed. Status: 405, Reason: Connection Failure
+[2025-12-12T21:58:49.330Z] Critical error, stopping reconnection attempts
+[2025-12-12T21:58:52.223Z] Iniciando limpieza de recursos...
+[2025-12-12T21:59:35.517Z] Connection update: connecting
+[2025-12-12T21:59:39.554Z] Connection update: close
+[2025-12-12T21:59:39.554Z] Connection closed. Status: 405, Reason: Connection Failure
+[2025-12-12T21:59:39.554Z] Critical error, stopping reconnection attempts
+[2025-12-12T21:59:45.909Z] Iniciando limpieza de recursos...

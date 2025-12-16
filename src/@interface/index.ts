@@ -110,7 +110,7 @@ async function main() {
 
   // Crear instancia de VoltAgent
   const mcpServer = createMcpServer();
-  new VoltAgent({
+  const voltAgent = new VoltAgent({
     agents: {
       assistant,
     },
@@ -120,6 +120,8 @@ async function main() {
     server,
     logger,
   });
+  await voltAgent.startServer();
+
 
   logger.info("BuilderBot API running on port 3001: /v1/messages, /v1/blacklist, /v1/register");
   logger.info("VoltAgent MCP server running on port 3141");
