@@ -2,33 +2,36 @@ version: "3.9"
 
 services:
   mcp-bbc:
-    build:
+    build: 
       context: .
       dockerfile: Dockerfile
     container_name: mcp-bbc
-
+    ports:
+      - "3141:3141"
+      - "3001:3001"
+    # Usar env_file es más simple que listar todas las variables
     env_file:
       - .env
-
     environment:
+      # Variables adicionales específicas para Docker
       - NODE_ENV=production
       - FFMPEG_PATH=/usr/bin/ffmpeg
       - PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium-browser
-
     volumes:
+      # Persistir datos de WhatsApp/Baileys entre reinicios
       - whatsapp_data:/app/.wwebjs_auth
       - whatsapp_cache:/app/.wwebjs_cache
-
     restart: unless-stopped
+    # Mantener stdin y tty abiertos ayuda con algunos procesos
     tty: true
     stdin_open: true
-
+    # Configuración de logging para evitar que los logs crezcan indefinidamente
     logging:
       driver: "json-file"
       options:
         max-size: "10m"
         max-file: "3"
-
+    # Límites de recursos (opcional pero recomendado)
     deploy:
       resources:
         limits:
@@ -37,20 +40,6 @@ services:
         reservations:
           cpus: '0.5'
           memory: 512M
-
-    labels:
-      - "traefik.enable=true"
-      - "traefik.http.routers.mcp-bbc.rule=Host(`mcp.evercastellon.pw`)"
-      - "traefik.http.routers.mcp-bbc.entrypoints=websecure"
-      - "traefik.http.routers.mcp-bbc.tls.certresolver=letsencrypt"
-      - "traefik.http.services.mcp-bbc.loadbalancer.server.port=3001"
-
-    networks:
-      - traefik
-
-networks:
-  traefik:
-    external: true
 
 volumes:
   whatsapp_data:
